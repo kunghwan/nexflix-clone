@@ -4,7 +4,7 @@ import { RiNetflixFill } from "react-icons/ri";
 import OpenColor from "open-color";
 import { useEffect } from "react";
 import { user } from "../../assets/fakebase";
-
+import { Button } from "../ui/Button";
 const Header = () => {
   const navi = useNavigate();
 
@@ -14,8 +14,11 @@ const Header = () => {
 
   const { pathname } = useLocation();
 
-  const onT = () => {
+  const onL = () => {
     navi("/login");
+  };
+  const onT = () => {
+    navi("/");
   };
 
   // height : auto는 높이를 지정하면 버튼의 크기를 유동적으로 전환?
@@ -36,7 +39,7 @@ const Header = () => {
         paddingRight: 10,
       }}
     >
-      <button
+      <Button
         className="h-10  px-2.5 text-xl text-red-600"
         style={{
           fontSize: 20,
@@ -44,9 +47,10 @@ const Header = () => {
           padding: "20px 10px",
           height: "auto",
         }}
+        onClick={onT}
       >
         <RiNetflixFill />
-      </button>
+      </Button>
       <ul
         className="flex gap-x-2.5"
         style={{
@@ -56,36 +60,31 @@ const Header = () => {
         }}
       >
         <li>
-          <button
+          <Button
             style={{
-              display: "flex",
-              alignItems: "center",
-              padding: "5px 10px",
               border: "1px solid",
-              borderRadius: 4,
+
               fontSize: ".75rem",
             }}
           >
             <HiLanguage />
             언어
-          </button>
+          </Button>
         </li>
         {/* 조건 &&연산자 === 앞의 조건에 부합할떄 실행할 코드를 && 오른편에 적어줍니다. */}
         {/* *조건 ? : 연산자 === 앞의 조건에 부합때 실행할 코드는 ? 오른편에, 앞의 조건에 부합하지 않을 때 실행할 코드는 : 오른편에 */}
 
-        {(pathname !== "/login" || (!user && pathname !== "/login")) && (
+        {pathname !== "/login" && (
           <li>
-            <button
+            <Button
               style={{
-                padding: "5px 10px",
                 background: OpenColor.red[7],
                 fontSize: ".75rem",
-                borderRadius: 4,
               }}
-              onClick={onT}
+              onClick={onL}
             >
               로그인
-            </button>
+            </Button>
           </li>
         )}
       </ul>
