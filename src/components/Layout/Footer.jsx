@@ -3,7 +3,7 @@ import { fMenus } from "../../assets/fakebase";
 import { Link } from "react-router-dom";
 import { HiLanguage } from "react-icons/hi2";
 import OpenColor from "open-color";
-
+import { Button } from "../ui/Button";
 // 해당 경로로 이동함
 // <Link to={경로}>{이름}</Link>
 const Footer = () => {
@@ -45,14 +45,10 @@ const Footer = () => {
           );
         })}
       </ul>
-      <button
-        style={{
-          border: "1px solid",
-        }}
-      >
+      <Button>
         <HiLanguage />
         한국어
-      </button>
+      </Button>
       <p>넷플릭스 대한민국</p>
       <p>
         넷플릭스서비시스코리아 유한회사 통신판매업신고번호:
