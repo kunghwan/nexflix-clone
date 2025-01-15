@@ -7,6 +7,8 @@ import ContactUS from "./ContactUS";
 import LearnReact from "./LearnReact";
 import UseState from "./LearnReact/LearnUseState";
 import LearnUseEffect from "./LearnReact/learn-useEffect";
+import LearnUseRef from "./LearnReact/learn-useRef";
+import LearnUseMemo from "./LearnReact/learn-useMemo";
 
 const AppRouter = () => {
   return (
@@ -23,6 +25,8 @@ const AppRouter = () => {
           <Route index element={<LearnReact />} />
           <Route path="useState" element={<UseState />} />
           <Route path="useEffect" element={<LearnUseEffect />} />
+          <Route path="useRef" element={<LearnUseRef />} />
+          <Route path="useMemo" element={<LearnUseMemo />} />
         </Route>
       </Routes>
     </BrowserRouter>

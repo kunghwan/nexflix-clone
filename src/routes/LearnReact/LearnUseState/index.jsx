@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const UseState = () => {
   const [string, setString] = useState("");
@@ -181,8 +181,16 @@ const UseState = () => {
       let copy = [...prev, newPerson];
       console.log(copy);
       return copy;
+      // return [newPerson, ...prev];
     });
   };
+
+  // useEffect(() => {
+  //   console.log({
+  //     objArray,
+  //     array,
+  //   });
+  // }, [objArray, array]);
 
   return (
     <div>
