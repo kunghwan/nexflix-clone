@@ -14,3 +14,18 @@
 ul {
   list-style-type: none;
 }
+input {
+  border: 1px solid;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+button {
+  background: whitesmoke;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: red;
+}
