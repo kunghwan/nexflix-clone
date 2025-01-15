@@ -53,7 +53,7 @@ const UseState = () => {
   };
 
   const onMasetrSwitch = () => {
-    if (!boolean && !boolean2 && boolean3) {
+    if (!boolean && !boolean2 && !boolean3) {
       setBoolean(true);
       setBoolean2(true);
       setBoolean3(true);
@@ -156,8 +156,8 @@ const UseState = () => {
   ]);
 
   const onObjArray = () => {
-    const kyh = objArray[0];
-    const lhj = objArray[1];
+    // const kyh = objArray[0];
+    // const lhj = objArray[1];
 
     const newPerson = { l: last, f: first };
 
@@ -298,3 +298,8 @@ const xxEmail = {
     surfix: "co,kr",
   },
 };
+// 매개변수 함수에 전달되는 변수로 함수 정의 부분에 선언 매개변수 이름은
+// 마음대로 지정할수 있음
+// 매개변수 없이 객체의 속성에 접근하는 것은 불가능
+// 간접적으로 연결 "동일한 인물이 존재합니다"랑
+// 고차함수 : 함수를 인자로 받거나 결과로 반환하는 함수
