@@ -145,6 +145,41 @@ const UseState = () => {
 
       console.log(copy);
 
+      return [...prev, string];
+    });
+  };
+
+  const [objArray, setObjArray] = useState([
+    { l: "김", f: "영화" },
+    { l: "이", f: "형진" },
+    { l: "강", f: "찬희" },
+  ]);
+
+  const onObjArray = () => {
+    const kyh = objArray[0];
+    const lhj = objArray[1];
+
+    const newPerson = { l: last, f: first };
+
+    const found = objArray.find((person) => {
+      const isSame = isSamePerson(newPerson, person);
+
+      if (isSame) {
+        return person;
+      }
+    });
+
+    // console.log(isSamePerson(kyh, kyh));
+
+    // const found = objArray.find((person) => person === { l: last, f: first });
+    if (found) {
+      return alert("동일한 인물이 존재합니다");
+    }
+    alert("새로운 인물입니다");
+    setObjArray((prev) => {
+      console.log(prev);
+      let copy = [...prev, newPerson];
+      console.log(copy);
       return copy;
     });
   };
@@ -223,8 +258,35 @@ const UseState = () => {
         />
         <button onClick={onAddArray}>Add to Array</button>
       </div>
+
+      <button onClick={onObjArray}>Check Obj Array</button>
     </div>
   );
 };
 
 export default UseState;
+
+const isSamePerson = (p1, p2) => {
+  const name1 = `${p1.l} ${p1.f}`;
+  const name2 = `${p2.l} ${p2.f}`;
+
+  if (name1 === name2) {
+    return true;
+  }
+
+  return false;
+};
+
+// 문자열과 문자열 비교 간단합니다 === // !== 같은지 다른지
+//  숫자 비교는 ===, !==,<,>,<=,>=
+// 객체 비교
+// 객체의 모든값을 하나하나 일일이 비교해줘야 한다.
+// ysw03031@naver.com
+const email = " ysw03031@naver.com";
+const xxEmail = {
+  first: "ysw03031",
+  last: {
+    domain: "naver",
+    surfix: "co,kr",
+  },
+};
