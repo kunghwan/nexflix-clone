@@ -65,6 +65,42 @@ const UseState = () => {
   };
 
   const [obj, setObj] = useState({ last: "유", first: "경환" });
+  const [first, setFirst] = useState(obj.first);
+  const [last, setLast] = useState(obj.last);
+
+  const onLast = () => {
+    // 1.성을 입력하지 않는다면 입력해라
+    if (last.length === 0) {
+      return alert("입력해라,쫌");
+    }
+    // 2.이전 이름과 같다면 변경사항이 없다.
+    if (last === obj.last) {
+      return alert("달라진게 없다.");
+    }
+    console.log(last);
+    setObj((prev) => {
+      return { ...prev, last };
+    });
+    alert("성을 개명하였습니다");
+  };
+
+  const onFirst = () => {
+    if (first.length === 0) {
+      return alert("입력하삼 이름");
+    }
+    if (first === obj.first) {
+      return alert("똑같아");
+    }
+    console.log(first);
+    // 바꾸는 함수 setObj로 직접 바꿔줌 초기값은 무조건 있어야함
+    setObj((prev) => {
+      return { ...prev, first };
+      // 위에코드 뒤를 바꿔치기 하면 shift효과발생
+    });
+
+    alert("이름을 개명하였습니다");
+  };
+
   const onSubmitObj = () => {
     const newFirstName = "빈";
     const newLastName = "원";
@@ -75,9 +111,9 @@ const UseState = () => {
     //   // 순서중요
     // });
     // 2. 성만 개명
-    setObj((prev) => {
-      return { ...prev, last: newLastName };
-    });
+    // setObj((prev) => {
+    //   return { ...prev, last: newLastName };
+    // });
     // 3 성, 이름 모두 개명
     // const newName = {
     //   last: newLastName,
@@ -88,6 +124,29 @@ const UseState = () => {
     // //   first: newFirstName,
     // // });
     // setObj(newName); //바로 새운 값을 입력
+  };
+  const [array, setArray] = useState(["a", "b", "c", "d"]);
+
+  const onAddArray = () => {
+    console.log(string.length);
+    // 만약에 string 이라는 변수가 길이가 0일떄가 아무것도 입력하지 않을때인데 이떄에는 안됨
+    if (string.length === 0) {
+      return alert("적어라 좀");
+    }
+
+    const found = array.find((item) => item === string);
+    if (found) {
+      return alert("중복된 값");
+    }
+
+    setArray((prev) => {
+      console.log(prev);
+      let copy = [...prev, string];
+
+      console.log(copy);
+
+      return copy;
+    });
   };
 
   return (
@@ -134,12 +193,35 @@ const UseState = () => {
           {obj.last}
           {obj.first}
         </p>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          value={last}
+          onChange={(e) => setLast(e.target.value)}
+          placeholder="새로운 성을 입력하세요"
+        />
+        <button onClick={onLast}>성 개명</button>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          value={first}
+          onChange={(e) => setFirst(e.target.value)}
+          placeholder="새로운 이름을 입력하세요"
+        />
+        <button onClick={onFirst}>이름 개명</button>
+      </div>
+
+      <div>
         <input
           type="text"
           value={string}
           onChange={(e) => setString(e.target.value)}
         />
-        <button onClick={onSubmitObj}>접수</button>
+        <button onClick={onAddArray}>Add to Array</button>
       </div>
     </div>
   );
