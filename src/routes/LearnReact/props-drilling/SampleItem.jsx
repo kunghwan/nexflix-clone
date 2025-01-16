@@ -3,7 +3,3 @@ const SampleItem = ({ text }) => {
 };
 
 export default SampleItem;
-
-// const Item = ({ text }) => {
-//     return <p>{text}</p>;
-//   };
