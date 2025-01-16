@@ -5,6 +5,8 @@ const UseState = () => {
 
   // 함수 이름은 버튼의 이름을 따서 앞에 on만 붙어서 적을 수도 있다.
   const onChangeString = () => {
+    // 콜백함수
+    // return prev + '경환'
     //  1.직접 입력하기
     // 초기값과 동일한 타입의 값을 입력한다.
     // setString("유경환");
@@ -16,6 +18,7 @@ const UseState = () => {
 
   const [number, setNumber] = useState(0);
 
+  // 함수안에서 정의 내린거린거는 함수밖에서는 뱉을수없다
   const onMinus = () => {
     setNumber((prev) => {
       return prev - 1; //숫자
@@ -67,7 +70,7 @@ const UseState = () => {
   const [obj, setObj] = useState({ last: "유", first: "경환" });
   const [first, setFirst] = useState(obj.first);
   const [last, setLast] = useState(obj.last);
-
+  // console.log(obj.last) 성만 보여줄려할때
   const onLast = () => {
     // 1.성을 입력하지 않는다면 입력해라
     if (last.length === 0) {
@@ -95,9 +98,11 @@ const UseState = () => {
     // 바꾸는 함수 setObj로 직접 바꿔줌 초기값은 무조건 있어야함
     setObj((prev) => {
       return { ...prev, first };
+      // setObj((prev) => ({...prev,first})) 객체로 되어있을떄는 짧게할떄 괄호 하나를 씌워야함 return()같은 형식이어서
+      // setObj({last:'윤',first})
       // 위에코드 뒤를 바꿔치기 하면 shift효과발생
     });
-
+    // setObj(({last,first})) 전체이름을 바꿀때
     alert("이름을 개명하였습니다");
   };
 
@@ -149,6 +154,7 @@ const UseState = () => {
     });
   };
 
+  // 객체와 객체 비교는 하나하나 다 비교 다른 비교할수 있는 다른 고유값
   const [objArray, setObjArray] = useState([
     { l: "김", f: "영화" },
     { l: "이", f: "형진" },

@@ -9,6 +9,8 @@ import UseState from "./LearnReact/LearnUseState";
 import LearnUseEffect from "./LearnReact/learn-useEffect";
 import LearnUseRef from "./LearnReact/learn-useRef";
 import LearnUseMemo from "./LearnReact/learn-useMemo";
+import Todo from "./todo";
+import PDSample from "./LearnReact/props-drilling/sample1";
 
 const AppRouter = () => {
   return (
@@ -27,7 +29,9 @@ const AppRouter = () => {
           <Route path="useEffect" element={<LearnUseEffect />} />
           <Route path="useRef" element={<LearnUseRef />} />
           <Route path="useMemo" element={<LearnUseMemo />} />
+          <Route path="props-drilling" element={<PDSample />} />
         </Route>
+        <Route path="todo" element={<Todo />} />
       </Routes>
     </BrowserRouter>
   );
