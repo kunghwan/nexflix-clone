@@ -11,6 +11,7 @@ import LearnUseRef from "./LearnReact/learn-useRef";
 import LearnUseMemo from "./LearnReact/learn-useMemo";
 import Todo from "./todo";
 import PDSample from "./LearnReact/props-drilling/sample1";
+import PropsDrilling2 from "./LearnReact/props-drilling";
 
 const AppRouter = () => {
   return (
@@ -32,6 +33,7 @@ const AppRouter = () => {
           <Route path="props-drilling" element={<PDSample />} />
         </Route>
         <Route path="todo" element={<Todo />} />
+        <Route path="props-drilling2" element={<PropsDrilling2 />} />
       </Routes>
     </BrowserRouter>
   );

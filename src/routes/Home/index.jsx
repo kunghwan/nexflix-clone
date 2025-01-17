@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useTextInput } from "../../components/ui/TextInput";
 import OpenColor from "open-color";
 import styles from "./home.css";
+import { anotherReasons } from "../../assets/fakebase";
+import AnotherReasonItem from "./AnotherReasonItem";
 
 const Home = () => {
   const [text, setText] = useState("");
@@ -17,15 +19,13 @@ const Home = () => {
   return (
     <div>
       <h1 className={styles.h1}>Home</h1>
-      <form action="" onSubmit={onSubmit}>
-        <Text.Component
-          id="text"
-          placeholder={"이메일을 입력하세요"}
-          divCn={styles.input.div}
-          inputCn={styles.input.input}
-        />
-        <button>시작하기</button>
-      </form>
+
+      {
+        // 함수를 사용한다 = 호출 call/fire => ()까지 적어줌
+        anotherReasons.map((reason) => {
+          return <AnotherReasonItem key={reason.title} {...reason} />;
+        })
+      }
     </div>
   );
 };
