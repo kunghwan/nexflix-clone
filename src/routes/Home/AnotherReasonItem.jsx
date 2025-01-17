@@ -3,11 +3,16 @@ import styles from "./anotherReason.css";
 
 const AnotherReasonItem = ({ title, desc, Icon }) => {
   return (
-    <div className={styles.container}>
-      <p>{title}</p>
-      <p>{desc}</p>
-      <Icon />
-    </div>
+    <li>
+      <div className={styles.container}>
+        <div className={styles.wrap}>
+          <p className={styles.title}>{title}</p>
+          <p>{desc}</p>
+        </div>
+
+        <Icon className={styles.icon} />
+      </div>
+    </li>
   );
 };
 
