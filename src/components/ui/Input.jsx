@@ -34,7 +34,7 @@ const Input = ({ id, placeholder, setValue, value, type }) => {
         onBlur={onBlur}
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        type={type ?? "email"} //이거의미 찾아보기
+        type={type ?? "email"} // type이 null이나 undefined일 경우 "email" 사용
         id={id}
       />
     </div>

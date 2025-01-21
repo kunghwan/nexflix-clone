@@ -5,12 +5,7 @@ import OpenColor from "open-color";
 const top = 25;
 
 const styles = {
-  container: style([
-    homeStyle.container.div,
-    {
-      border: "1px solid",
-    },
-  ]),
+  container: style([homeStyle.container.div, {}]),
   content: style({
     border: "1px solid",
     position: "relative",
