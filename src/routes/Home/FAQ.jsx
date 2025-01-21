@@ -67,3 +67,5 @@ const FAQItem = ({ q, a, path, pathText, state, onClick }) => {
     </li>
   );
 };
+
+// 저장
