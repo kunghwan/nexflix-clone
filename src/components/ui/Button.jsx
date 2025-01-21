@@ -1,6 +1,6 @@
 // Props Drilling
 // 다른 곳에서 아래의 컴포넌트를 불러 쓸 때 전달해 주는 값
-
+import styles from "./button.css";
 // size = 'sm' \ 'lg' \'xl'
 // fonstSize
 const Button = ({ onClick, type, children, style }) => {

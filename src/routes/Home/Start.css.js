@@ -7,6 +7,7 @@ const imgUrl =
 const styles = {
   comtainer: style({
     padding: "100px 30px",
+
     backgroundImage: `url(${imgUrl})`,
     position: "relative",
     zIndex: 0,

@@ -14,8 +14,8 @@ const Layout = () => {
         style={{
           backgroundColor: OpenColor.gray[9],
           color: OpenColor.gray[0],
-          paddingTop: 60,
-          height: "100vh",
+          // paddingTop: 60,
+          minHeight: "100vh",
         }}
       >
         <Outlet />

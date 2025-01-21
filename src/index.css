@@ -22,11 +22,7 @@ input {
 }
 
 button {
-  background: whitesmoke;
+  /* background: whitesmoke; */
   padding: 10px;
   border-radius: 4px;
-}
-
-button:hover {
-  background-color: red;
 }
