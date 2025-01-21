@@ -1,9 +1,9 @@
 import { useState, useEffect, useMemo } from "react";
 import styles from "./ImageSlider.css";
 import { imgs } from "../../assets/fakebase";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import "./styles.css";
 
 const ImageSlider = () => {
@@ -60,7 +60,7 @@ const ImageSlider = () => {
       }}
     >
       <h1>dsfsdf</h1>
-      <Slider dots infinite speed={500} slidesToScroll={1} slidesToShow={3}>
+      {/* <Slider dots infinite speed={500} slidesToScroll={1} slidesToShow={3}>
         <div
           style={{
             padding: 100,
@@ -72,7 +72,7 @@ const ImageSlider = () => {
         <div>3</div>
         <div>4</div>
         <div>5</div>
-      </Slider>
+      </Slider> */}
     </div>
   );
 };
