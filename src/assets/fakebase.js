@@ -125,3 +125,5 @@ export const faqs = [
     path: "",
   },
 ];
+
+export const openSans = `"Open Sans", serif`;
