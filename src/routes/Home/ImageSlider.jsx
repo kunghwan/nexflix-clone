@@ -4,7 +4,7 @@ import { useRef, useCallback } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { imgs } from "../../assets/fakebase";
-import styles from "./imageSlider.css";
+import styles from "./ImageSlider.css";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 const ImageSlider = () => {
