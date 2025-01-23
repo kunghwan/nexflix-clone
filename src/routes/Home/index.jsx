@@ -3,22 +3,21 @@ import { useState, useEffect } from "react";
 import { useTextInput } from "../../components/ui/TextInput";
 import OpenColor from "open-color";
 import styles from "./home.css";
-import { anotherReasons } from "../../assets/fakebase";
+import { anotherReasons, user } from "../../assets/fakebase";
 import AnotherReasonItem from "./AnotherReasonItem";
 import More from "./More";
 import FAQ from "./FAQ";
 import Start from "./Start";
 import ImageSlider from "./ImageSlider";
+import { useMyContext } from "../../contextApi/ContextProvider";
+import UserHome from "./userHome";
 
 const Home = () => {
-  const [text, setText] = useState("");
-  const Text = useTextInput();
+  const { user } = useMyContext();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    console.log(Text.ref.current.value);
-  };
+  if (user) {
+    return <UserHome />;
+  }
 
   return (
     <div className={styles.wrap}>

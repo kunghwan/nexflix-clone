@@ -8,6 +8,7 @@ const styles = {
     flexDirection: "column",
     rowGap: 20,
     padding: 30,
+    paddingTop: 90,
   }),
   login: style({
     background: OpenColor.red[7],

@@ -21,7 +21,10 @@ const initialState = {
 const Context = createContext(initialState);
 
 const ConTextProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    email: "ysw03031@naver.com",
+    uid: "tester1",
+  });
   const onUserLogin = (email, uid) => {
     setUser({ email, uid });
   };
@@ -34,8 +37,8 @@ const ConTextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log({ email });
-  }, [email]);
+    console.log({ user });
+  }, [user]);
 
   return (
     <Context.Provider

@@ -13,6 +13,7 @@ import Todo from "./todo";
 import PDSample from "./LearnReact/props-drilling/sample1";
 import PropsDrilling2 from "./LearnReact/props-drilling";
 import RandomNumber from "./random-number";
+import { useMyContext } from "../contextApi/ContextProvider";
 
 const AppRouter = () => {
   return (
